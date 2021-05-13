@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <title>Ohayo, Lanna!</title>
+    <title>Document</title>
     <style>
 
     @charset "UTF-8";
@@ -82,21 +81,15 @@
 
     <div class="msg">
         <b id="frasedadata"></b>
-        <br>
-        <br>
+        <br><br>
         <p id="frasedodiaaqui"></p>
         <hr class="sep">
         <p><b>Você ganhou um presente, manda um print para validar:</b><br><br></p>
-        <p id="presentes">
-        </p>
+        <p id="presentes"></p>
         <hr class="sep">
-        <p id="poemas">
-        <b>Agora um poema:</b><br><br>
-        </p>
+        <p id="poemas"></p>
         <hr class="sep">
-        <p>
-        <b id="musicas">E para finalizar, uma música:<b><br><br>
-        </p>
+        <p><b id="musicas"></p>
     </div>
     <hr class="finish">
     <footer>
@@ -104,144 +97,136 @@
     </footer>   
 
     <script lang="javascript">
-        window.onload = ()=>{
-            document.getElementById("gif").setAttribute("src", `imagens/gifs/${Math.floor(Math.random()*21)}.gif`)
 
-            let data = new Date()
-            let dia = data.getDate()
-            let mes = data.getMonth()+1
-            let ano = data.getFullYear()
-            let data_formatada = `${dia}/${mes}/${ano}`
-            document.getElementById("frasedadata").innerHTML=`Oie, amor! Bem-vinda ao dia (${data_formatada}) e aqui está uma mensagem de bom dia para você:`
-            let diaum = new Date(Date.parse('May 14, 2021'))
-            let counter = parseInt(parseInt(data.getTime() - diaum.getTime())/(1000 * 60 * 60 * 24))
-            document.getElementById("aquiocontador").innerHTML=`Este é o <b class="day"><u>${counter}<sup>o</sup></u></b> dia de 365!`
-            let todasasfrases = ["— Se você fosse uma música seria as melhores notas.",
-        "— As mais lindas palavras de amor são ditas no silêncio de um olhar.",
-        "— Nós somos perfeitos juntos. Nunca duvide disso.",
-        "— Que seus lindos cabelos dourados iluminem tanto quanto o Sol.",
-        "— Não impora a cor do céu, pois quem faz o dia ser lindo é você.",
-        "— Forças, Épona! Levante-se, força!",
-        "— Meu amor, você é o meu trevo da sorte! Que seu dia seja tão bom quanto o efeito que você faz na minha vida.",
-        "— Sempre achei que essa história de borboletas no estômago era bobagem, até que te encontrei e descobri: como é ficar nervoso, como é esperar cada novo encontro, como é querer ver a pessoa toda hora, como é sentir saudades logo depois de dar tchau. Você mexeu comigo! Bom dia, namorada perfeita!",
-        "— A vida tem dias cansativos, dias de rotina desgastante, dias de más notícias... Mas, em todos estes dias, tenho o teu amor. Então, sempre me sinto um pouco preenchido. Bom dia!",
-        "— Mesmo quando tu é brava, é fofa! KKKK. Bom diiaaa!",
-        "— Abre esse sorrisão aí! Sei que pode. Abrir esse sorriso é como abrir uma janela às 08:00 de um dia ensolarado. Bom dia, denguinho.",
-        "— Te venero, minha cúmplice.",
-        "— Já pensou hoje que dentro de ti guarda todas as qualidades do mundo?",
-        "— Amo você, meu paraíso terreno. SIM, roubei sua frase, amou?",
-        "— Sei que essa será simples, mas: eu te amo. É curto, mas sincero.",
-        "— Renda-se, como eu me rendi. Mergulhe no que você não conhece como eu mergulhei. Não se preocupe em entender, viver ultrapassa qualquer entendimento.",
-        "— Piada: Um caipira chega à casa de um amigo que está vendo TV e pergunta:<br>— E aí, firme?<br>O outro responde:<br>— Não, Futebor.",
-        "— Piada: Por que o pinheiro não se perde na floresta?<br>Porque ele tem uma pinha — um mapinha.",
-        "— Piada: O que o pato disse pra pata?<br>Vem Quá!",
-        "— Piada: Era uma vez um pintinho que se chamava Relam. Toda vez que chovia Relam piava.",
-        "— Piada: Qual a cidade brasileira que não tem táxi?<br>R.: Uberlândia.",
-        "— Piada: Por que o rádio não pode ter filhos?<br>Porque ele é stereo.",
-        "— Piada: Por que as plantas pequenas não falam?<br>Porque elas são mudinhas.",
-        "— Piada: Qual a fruta que anda de trem?<br>R.:O kiwiii.",
-        "— Piada: O que é um astrólogo andando a cavalo?<br>R.: Um Cavaleiro do Zodíaco.",
-        "— Piada: Qual a galinha que cai no chão e surta?<br>R.: A galinha cai-i-pira.",
-        "— Piada: Qual a diferença do lago e da padaria?<br>R.: No lago há sapinhos e na padaria assa pão.",
-        "— Piada: Qual o melhor tratamento para pessoas que sofrem de queda constante?<br>R:. Para-quedismo.",
-        "— Piada: Um tênis foi jogado ao mar e afundou. Qual o nome do filme?<br>R.: Titanike.",
-        "— Piada: Qual é a canção que emociona a pêra?<br>Óhpera.",
-        "— Bom dia, amor da minha vida! Espero que o seu acordar seja doce e lhe encha o coração de energia para enfrentar mais um dia. Aconteça o que acontecer, eu estou aqui, sempre pensando em você, sempre desejando o melhor. E por isso não se esqueça de me levar também em cada passo que hoje der.",
-        "— Hoje acordei com você em meus pensamentos. Logo me peguei sorrindo, pois sabia que o dia seria especial. Bom dia, meu amor.",
-        "— Acordar pensando em você é garantia de uma manhã gloriosa e iluminada. Bom dia, meu anjinho.",
-        "— Meus dias se tornaram melhores e minhas manhãs gloriosas desde que você entrou na minha vida. Booom diiaa!",
-        "— Sorrio para um novo dia por saber que tenho um amor para a vida. Bom dia! Que seu dia seja repleto de alegria e paz. Viva cada momento e saiba que estarei pensando em você em cada segundo. Você é o meu amor e só de saber que você existe, meu dia já se ilumina. Sorria, amor, e nunca esqueça quanto amo você!",
-        "— Bom dia, Lua da minha vida! Não sei o que brilha mais, se é o sol com seus raios de luz ou meu coração por saber que tenho você. Em todo caso o que é importante é que o seu dia seja iluminado e repleto de sentimentos bons e marcantes. Amo você e espero que seu dia seja igual a minha vida depois que você entrou nela: mágico!",
-        "— Desejo um dia maravilhoso para você que me completa todas as noites. Bom dia, nhonhoo!",
-        "— Bom dia, meu anjo! O dia nem começou e eu já estou morrendo de saudades e contando os segundo para te encontrar. Espero que o teu dia seja repleto de novidades e que passe voando para poder ouvir sobre tudo que aconteceu nele o mais rápido possível. Te amo e não vejo a hora de te ver!",
-        "— Que esta manhã iluminada te lembre da força do amor que sinto por você. Bom dia!",
-        "— Você é a cor dos meus dias e a luz das minhas noites. Bom diaa!",
-        "— Você é tão inteligente, esperta, gentil, carinha, perfeita e com uma voz tão encantadora! Nunca duvide disso.",
-        "— Que sua manhã seja tão doce quanto você. Bom dia, amor da minha vida.",
-        "— Espero que tenha tido uma linda noite de sono, meu amor. Que o seu dia seja tão iluminado quanto a sua alma.",
-        "— Eu não sonho em chegar ao paraíso, pois tenho ele ao meu lado todas as manhãs. Bom dia!",
-        "— Seja bem vindo(a) a um dia repleto de sorrisos, amor e oportunidades. Bom dia, vida.",
-        "— Bom dia, amor da minha vida. Espero que tenha sonhado com o dia perfeito que teremos pela frente.",
-        "— Hoje o meu dia já começou maravilhoso. Quer saber o porquê? Acordei com você em meus pensamentos. Bom dia, meu amor.",
-        "— Você é a melhor artista que conheço. A única obra de arte que aprecio e a única voz que soa música para meus ouvidos. Te amoo!",
-        "— Meu amor, que este dia lhe traga paz e serenidade. Que ele seja repleto de oportunidades e conquistas. Bom dia!",
-        "— Gosto mais de você do que de cappuccino! Bom dia, meu amor!",
-        "— Bom dia! Te agradeço por tornar a minha vida mais doce.",
-        "— Espero que a sua manhã seja tão radiante quanto seu sorriso! Te amo!",
-        "— Esta manhã quero que você foque apenas nas coisas boas da vida, como o nosso amor, e que possa esquecer qualquer problema que atormenta sua mente. Pense em como vai ser bom quando estivermos juntos e verá que todas as suas preocupações irão desaparecer. Um beijo enorme de bom dia e muita força!",
-        "— Não tem nada melhor que começar o dia pensando na pessoa mais incrível que eu conheço: você! Bom dia!",
-        "— Bom dia, amor! Espero que a sua luz interior brilhe no dia de hoje e ilumine todo o mundo à sua volta!",
-        "— Todos os dias são mágicos para quem está apaixonado! Bom dia, minha vida!",
-        "— Acordar feliz virou rotina desde que você apareceu na minha vida. Bom dia, meu amor!",
-        "— É você que faz meus dias serem melhores e é em você que penso quando busco a coragem para encarar um novo amanhecer. Tenha um bom dia, meu bem. Encare esta manhã com otimismo. Todos os dias, ao acordar, agradeço pelo nosso amor e por tudo que vivemos. Sorria e nunca esqueça que você é quem eu sempre quis ao meu lado.",
-        "— Manda uma foto sorrindo para mim! Seu sorriso ilumina o meu dia. Tenha uma manhã maravilhosa, amor!",
-        "— Com um novo dia começando, eu quero que você saiba que é a pessoa mais importante da minha vida! Bom dia! Eu amo você!",
-        "— Você é o primeiro pensamento que surge na minha mente todas as manhãs. Bom dia!",
-        "— Sabe aquele dia em que vai dar tudo certo e que parece que somos capazes de conquistar o mundo? Pois é, esse é o dia que eu quero para você. Você é uma pessoa fantástica e hoje é dia de mostrar para o mundo todo o que eu já sei há muito tempo: que você é incrível em todos os sentidos. Tenha um dia magnífico, meu amor!",
-        "— Por favor, acorde rápido porque minhas manhãs não estão completas sem você. Bom dia, meu amor!",
-        "— Nesta linda manhã, gostaria de agradecer por você ter entrado na minha vida e feito dela um lugar melhor. Eu te amo!",
-        "— Sonhei com você! Acordei sorrindo, com muita vontade de te dar um beijo e dizer que te amo! Bom dia!",
-        "— Os meus dias sempre são ótimos quando acordo e recebo um beijo seu. Quem me dera poder acordar todas as manhãs com você do meu lado. Eu te amo!",
-        "— A manhã sempre fica melhor com o seu 'bom dia'. Você é a minha força! Te amo, bebê!",
-        "— Quando você está nos meus sonhos, dormir até tarde é ótimo. Mas quando você está comigo, acordar é incrível. Bom dia!",
-        "— Toda vez que penso em você, metade das minhas preocupações desaparecem. Você alegra tudo ao seu redor! Eu te amo muito, bom dia!",
-        "— A luz que brilha de você é mais vital para mim do que a luz do sol da manhã. Bom dia, minha linda rainha!",
-        "— Compartilhar um sorriso é a maneira mais fácil de começar bem o seu dia. Envio um sorriso para você e espero que tenha um dia maravilhoso! Te amo!",
-        "— Bom dia meu amor. Que seja breve o tempo sem você. Que seja doce o momento do reencontro. Que seja eterno o tempo que passamos juntos.",
-        "— O seu amor incondicional me dá forças para continuar lutando! Bom dia, meu bem!",
-        "— Com você do meu lado, todos os obstáculos parecem mais fáceis de ultrapassar. Bom dia para a pessoa mais forte e leal que eu conheço, te amo!",
-        "— Bom dia para a minha companheira de todas as batalhas! A cada dia que passa, o meu amor e a minha admiração por você aumentam!",
-        "— Bom dia, amor. Desejo que você tenha um dia maravilhoso, cheio de carinho e felicidade!",
-        "— Bom dia, amor da minha vida! Que hoje você consiga realizar os seus objetivos e saiba que eu vou estar sempre do seu lado, nos melhores e nos piores momentos.",
-        "— Bom dia, amor! Estou rezando para o tempo colaborar e passar correndo até podermos estar juntos de novo!",
-        "— Todas as noites, eu adormeço pensando em você e todas as manhãs acordo feliz por saber que tenho o amor de alguém tão maravilhosa! Bom dia!",
-        "— O amor calcula as horas por meses, e os dias por anos; e cada pequena ausência é uma eternidade. Logo, logo estaremos juntos. Féee e bom diaa!",
-        "— Bom dia, mozão! Mesmo que eu não te veja todas as manhãs, passo os meus dias sonhando com você."]
-            if (counter > todasasfrases.length) {
-                document.getElementById("frasedodiaaqui").innerHTML = todasasfrases[parseInt(counter/todasasfrases.length)]
-            } else{
-                document.getElementById("frasedodiaaqui").innerHTML = todasasfrases[counter]
-            }
-            let presentes = ["— Você encontrou uma lâmpada mágica! E tem o direito de fazer um desejo. Peça-me o que você quiser e eu realizarei.",
+        //aqui você coloca suas frases do dia:
+
+        let todasasfrases = [
+            "— Se você fosse uma música seria as melhores notas.",
+            "— As mais lindas palavras de amor são ditas no silêncio de um olhar.",
+            "— Nós somos perfeitos juntos. Nunca duvide disso.",
+            "— Que seus lindos cabelos dourados iluminem tanto quanto o Sol.",
+            "— Não impora a cor do céu, pois quem faz o dia ser lindo é você.",
+            "— Forças, Épona! Levante-se, força!",
+            "— Meu amor, você é o meu trevo da sorte! Que seu dia seja tão bom quanto o efeito que você faz na minha vida.",
+            "— Sempre achei que essa história de borboletas no estômago era bobagem, até que te encontrei e descobri: como é ficar nervoso, como é esperar cada novo encontro, como é querer ver a pessoa toda hora, como é sentir saudades logo depois de dar tchau. Você mexeu comigo! Bom dia, namorada perfeita!",
+            "— A vida tem dias cansativos, dias de rotina desgastante, dias de más notícias... Mas, em todos estes dias, tenho o teu amor. Então, sempre me sinto um pouco preenchido. Bom dia!",
+            "— Mesmo quando tu é brava, é fofa! KKKK. Bom diiaaa!",
+            "— Abre esse sorrisão aí! Sei que pode. Abrir esse sorriso é como abrir uma janela às 08:00 de um dia ensolarado. Bom dia, denguinho.",
+            "— Te venero, minha cúmplice.",
+            "— Já pensou hoje que dentro de ti guarda todas as qualidades do mundo?",
+            "— Amo você, meu paraíso terreno. SIM, roubei sua frase, amou?",
+            "— Sei que essa será simples, mas: eu te amo. É curto, mas sincero.",
+            "— Renda-se, como eu me rendi. Mergulhe no que você não conhece como eu mergulhei. Não se preocupe em entender, viver ultrapassa qualquer entendimento.",
+            "— Piada: Um caipira chega à casa de um amigo que está vendo TV e pergunta:<br>— E aí, firme?<br>O outro responde:<br>— Não, Futebor.",
+            "— Piada: Por que o pinheiro não se perde na floresta?<br>Porque ele tem uma pinha — um mapinha.",
+            "— Piada: O que o pato disse pra pata?<br>Vem Quá!",
+            "— Piada: Era uma vez um pintinho que se chamava Relam. Toda vez que chovia Relam piava.",
+            "— Piada: Qual a cidade brasileira que não tem táxi?<br>R.: Uberlândia.",
+            "— Piada: Por que o rádio não pode ter filhos?<br>Porque ele é stereo.",
+            "— Piada: Por que as plantas pequenas não falam?<br>Porque elas são mudinhas.",
+            "— Piada: Qual a fruta que anda de trem?<br>R.:O kiwiii.",
+            "— Piada: O que é um astrólogo andando a cavalo?<br>R.: Um Cavaleiro do Zodíaco.",
+            "— Piada: Qual a galinha que cai no chão e surta?<br>R.: A galinha cai-i-pira.",
+            "— Piada: Qual a diferença do lago e da padaria?<br>R.: No lago há sapinhos e na padaria assa pão.",
+            "— Piada: Qual o melhor tratamento para pessoas que sofrem de queda constante?<br>R:. Para-quedismo.",
+            "— Piada: Um tênis foi jogado ao mar e afundou. Qual o nome do filme?<br>R.: Titanike.",
+            "— Piada: Qual é a canção que emociona a pêra?<br>Óhpera.",
+            "— Bom dia, amor da minha vida! Espero que o seu acordar seja doce e lhe encha o coração de energia para enfrentar mais um dia. Aconteça o que acontecer, eu estou aqui, sempre pensando em você, sempre desejando o melhor. E por isso não se esqueça de me levar também em cada passo que hoje der.",
+            "— Hoje acordei com você em meus pensamentos. Logo me peguei sorrindo, pois sabia que o dia seria especial. Bom dia, meu amor.",
+            "— Acordar pensando em você é garantia de uma manhã gloriosa e iluminada. Bom dia, meu anjinho.",
+            "— Meus dias se tornaram melhores e minhas manhãs gloriosas desde que você entrou na minha vida. Booom diiaa!",
+            "— Sorrio para um novo dia por saber que tenho um amor para a vida. Bom dia! Que seu dia seja repleto de alegria e paz. Viva cada momento e saiba que estarei pensando em você em cada segundo. Você é o meu amor e só de saber que você existe, meu dia já se ilumina. Sorria, amor, e nunca esqueça quanto amo você!",
+            "— Bom dia, Lua da minha vida! Não sei o que brilha mais, se é o sol com seus raios de luz ou meu coração por saber que tenho você. Em todo caso o que é importante é que o seu dia seja iluminado e repleto de sentimentos bons e marcantes. Amo você e espero que seu dia seja igual a minha vida depois que você entrou nela: mágico!",
+            "— Desejo um dia maravilhoso para você que me completa todas as noites. Bom dia, nhonhoo!",
+            "— Bom dia, meu anjo! O dia nem começou e eu já estou morrendo de saudades e contando os segundo para te encontrar. Espero que o teu dia seja repleto de novidades e que passe voando para poder ouvir sobre tudo que aconteceu nele o mais rápido possível. Te amo e não vejo a hora de te ver!",
+            "— Que esta manhã iluminada te lembre da força do amor que sinto por você. Bom dia!",
+            "— Você é a cor dos meus dias e a luz das minhas noites. Bom diaa!",
+            "— Você é tão inteligente, esperta, gentil, carinha, perfeita e com uma voz tão encantadora! Nunca duvide disso.",
+            "— Que sua manhã seja tão doce quanto você. Bom dia, amor da minha vida.",
+            "— Espero que tenha tido uma linda noite de sono, meu amor. Que o seu dia seja tão iluminado quanto a sua alma.",
+            "— Eu não sonho em chegar ao paraíso, pois tenho ele ao meu lado todas as manhãs. Bom dia!",
+            "— Seja bem vindo(a) a um dia repleto de sorrisos, amor e oportunidades. Bom dia, vida.",
+            "— Bom dia, amor da minha vida. Espero que tenha sonhado com o dia perfeito que teremos pela frente.",
+            "— Hoje o meu dia já começou maravilhoso. Quer saber o porquê? Acordei com você em meus pensamentos. Bom dia, meu amor.",
+            "— Você é a melhor artista que conheço. A única obra de arte que aprecio e a única voz que soa música para meus ouvidos. Te amoo!",
+            "— Meu amor, que este dia lhe traga paz e serenidade. Que ele seja repleto de oportunidades e conquistas. Bom dia!",
+            "— Gosto mais de você do que de cappuccino! Bom dia, meu amor!",
+            "— Bom dia! Te agradeço por tornar a minha vida mais doce.",
+            "— Espero que a sua manhã seja tão radiante quanto seu sorriso! Te amo!",
+            "— Esta manhã quero que você foque apenas nas coisas boas da vida, como o nosso amor, e que possa esquecer qualquer problema que atormenta sua mente. Pense em como vai ser bom quando estivermos juntos e verá que todas as suas preocupações irão desaparecer. Um beijo enorme de bom dia e muita força!",
+            "— Não tem nada melhor que começar o dia pensando na pessoa mais incrível que eu conheço: você! Bom dia!",
+            "— Bom dia, amor! Espero que a sua luz interior brilhe no dia de hoje e ilumine todo o mundo à sua volta!",
+            "— Todos os dias são mágicos para quem está apaixonado! Bom dia, minha vida!",
+            "— Acordar feliz virou rotina desde que você apareceu na minha vida. Bom dia, meu amor!",
+            "— É você que faz meus dias serem melhores e é em você que penso quando busco a coragem para encarar um novo amanhecer. Tenha um bom dia, meu bem. Encare esta manhã com otimismo. Todos os dias, ao acordar, agradeço pelo nosso amor e por tudo que vivemos. Sorria e nunca esqueça que você é quem eu sempre quis ao meu lado.",
+            "— Manda uma foto sorrindo para mim! Seu sorriso ilumina o meu dia. Tenha uma manhã maravilhosa, amor!",
+            "— Com um novo dia começando, eu quero que você saiba que é a pessoa mais importante da minha vida! Bom dia! Eu amo você!",
+            "— Você é o primeiro pensamento que surge na minha mente todas as manhãs. Bom dia!",
+            "— Sabe aquele dia em que vai dar tudo certo e que parece que somos capazes de conquistar o mundo? Pois é, esse é o dia que eu quero para você. Você é uma pessoa fantástica e hoje é dia de mostrar para o mundo todo o que eu já sei há muito tempo: que você é incrível em todos os sentidos. Tenha um dia magnífico, meu amor!",
+            "— Por favor, acorde rápido porque minhas manhãs não estão completas sem você. Bom dia, meu amor!",
+            "— Nesta linda manhã, gostaria de agradecer por você ter entrado na minha vida e feito dela um lugar melhor. Eu te amo!",
+            "— Sonhei com você! Acordei sorrindo, com muita vontade de te dar um beijo e dizer que te amo! Bom dia!",
+            "— Os meus dias sempre são ótimos quando acordo e recebo um beijo seu. Quem me dera poder acordar todas as manhãs com você do meu lado. Eu te amo!",
+            "— A manhã sempre fica melhor com o seu 'bom dia'. Você é a minha força! Te amo, bebê!",
+            "— Quando você está nos meus sonhos, dormir até tarde é ótimo. Mas quando você está comigo, acordar é incrível. Bom dia!",
+            "— Toda vez que penso em você, metade das minhas preocupações desaparecem. Você alegra tudo ao seu redor! Eu te amo muito, bom dia!",
+            "— A luz que brilha de você é mais vital para mim do que a luz do sol da manhã. Bom dia, minha linda rainha!",
+            "— Compartilhar um sorriso é a maneira mais fácil de começar bem o seu dia. Envio um sorriso para você e espero que tenha um dia maravilhoso! Te amo!",
+            "— Bom dia meu amor. Que seja breve o tempo sem você. Que seja doce o momento do reencontro. Que seja eterno o tempo que passamos juntos.",
+            "— O seu amor incondicional me dá forças para continuar lutando! Bom dia, meu bem!",
+            "— Com você do meu lado, todos os obstáculos parecem mais fáceis de ultrapassar. Bom dia para a pessoa mais forte e leal que eu conheço, te amo!",
+            "— Bom dia para a minha companheira de todas as batalhas! A cada dia que passa, o meu amor e a minha admiração por você aumentam!",
+            "— Bom dia, amor. Desejo que você tenha um dia maravilhoso, cheio de carinho e felicidade!",
+            "— Bom dia, amor da minha vida! Que hoje você consiga realizar os seus objetivos e saiba que eu vou estar sempre do seu lado, nos melhores e nos piores momentos.",
+            "— Bom dia, amor! Estou rezando para o tempo colaborar e passar correndo até podermos estar juntos de novo!",
+            "— Todas as noites, eu adormeço pensando em você e todas as manhãs acordo feliz por saber que tenho o amor de alguém tão maravilhosa! Bom dia!",
+            "— O amor calcula as horas por meses, e os dias por anos; e cada pequena ausência é uma eternidade. Logo, logo estaremos juntos. Féee e bom diaa!",
+            "— Bom dia, mozão! Mesmo que eu não te veja todas as manhãs, passo os meus dias sonhando com você."
+        ]
+
+        //aqui você coloca seus poemas:
+
+        let poemas = [
+            "terraço<br><p></p>aqui te apresento<br>à vista mais bonita da cidade<p></p>os relógios da rua alternam<br>hora e temperatura<br>meus olhos flutuando<br>com a estranha certeza<br>de que você dobra a esquina.<br><p></p>— Alice Sant'Anna.",
+            "Meu coração tem cabelos loiros<br><p></p>Meu coração tem cabelos loiros,<br>pele clara, e só sente em compasso de espera.<br>Meu coração que sente em tudo<br>um leite condensado de águas.<br>Meu coração que te sabe em tudo,<br>no que flutua e no que é musical,<br>na velocidade dos carros, na sensatez das árvores.<br>Condecorado de fardos e fadas,<br>meu coração inventou a malícia dos gatos. Meu coração traça circunferências.<br>Meu coração que te lambe,<br>inútil, aos saltos,<br>ampliado agora de águas e begônias vivas.<br><p></p>— André Di Bernardi.",
+            "Esmeralda<br><p></p>Esmeraldas no heráldico diadema,<br>no lóbulo da orelha cor-de-rosa;<br>o colo — arde na luz maravilhosa<br>de um tríplice colar da mesma gema.<br><p></p>No peito, aberto céu de alvura extrema,<br>entre nuvens de tule vaporosa,<br>verde constelação, na forma airosa<br>de principesca e recortada estema.<br><p></p>Agrilhoa-lhe o pulso um bracelete,<br>glaucas faíscas desprendendo; ao cinto<br>um florão de esmeraldas por colchete;<br><p></p>nos dedos finos igual pedra escalda...<br>Mas deixam todos esse fulgor extinto<br>os seus dois grandes olhos de esmeralda!<br><p></p>— B. Lopes.",
+            "Por que, pálida inocência,<br>Os olhos teus em dormência<br>A medo lanças em mim?<br>No aperto de minha mão<br>Que sonho do coração<br>Tremeu-te os seios assim?<br><p></p>E tuas falas divinas<br>Em que amor lânguida afinas<br>Em que lânguido sonhar?<br>E dormindo sem receio<br>Por que geme no teu seio<br>Ansioso suspirar?<br><p></p>Inocência! quem dissera<br>De tua azul primavera<br>As tuas brisas de amor!<br>Oh! quem teus lábios sentira<br>E que trêmulo te abrira<br>Dos sonhos a tua flor!<br><p></p>Quem te dera a esperança<br>De tua alma de criança,<br>Que perfuma teu dormir!<br>Quem dos sonhos te acordasse,<br>Que num beijo t'embalasse<br>Desmaiada no sentir!<br><p></p>Quem te amasse! e um momento<br>Respirando o teu alento<br>Recendesse os lábios seus!<br>Quem lera, divina e bela,<br>Teu romance de donzela<br>Cheio de amor e de Deus!<br><p></p>— Álvares de Azevedo.",
+            "Teu corpo é roseiral que exala fogo,<br>lambendo e devorando meus desejos.<br>Teus róseos espinhos são mil lampejos<br>que rasgam meus gritos de desafogo.<br><p></p>Teu roseiral, campo de mil prazeres,<br>vermelha fonte de insaciável gozo,<br>arde sobre meu peito. E fogoso<br>canto salmos de orgia, por trazeres<br><p></p>para meus braços, ó lúdica ninfa,<br>a rosa mais rosa, do roseiral<br>secreto que trazias dentro de ti.<br><p></p>— Cleberton Santos.",
+            "Sedento<br>o vento<br>roça brando<br>as águas oferecidas<br>dos verdes mares<br>do mundo.<br>Meus lábios,<br>sem menos sede<br>bebem<br>as águas profundas<br>desses seus lábios<br>sem muros.<br><p></p>— Domício Proença Filho.",
+            "Maribondos estalando pelo corpo<br>mínimos guardiões desse desejo<br>de furtar seus frutos<br>e desabotoar essas paredes<br>calhas, luzes, rochedos<br>que dividem e separam<br>minhas chamas das tuas<br><p></p>— Iracema Macedo.",
+            "O coração que bate neste peito,<br>E que bate por ti unicamente,<br>O coração, outrora independente,<br>Hoje humilde, cativo e satisfeito;<br><p></p>Quando eu cair, enfim, morto e desfeito,<br>Quando a hora soar lugubremente<br>Do repouso final, — tranquilo e crente<br>Irá sonhar no derradeiro leito.<br><p></p>E quando um dia fores comovida<br>— Branca visão que entre os sepulcros erra —<br>Visitar minha fúnebre guarida,<br><p></p>O coração, que toda em si te encerra,<br>Sentindo-te chegar, mulher querida,<br>Palpitará de amor dentro da terra.<br><p></p>— Guimarães Junior.",
+            "Um relâmpago rasga a noite<br>qual navalha afiada na pedra,<br>a batucada da chuva no asfalto,<br>ao som de motores que roncam<br>e de pneus patinando em poças.<br>A vida não é muito mais do que isto:<br>uma treva úmida e renitente<br>com brilhos e ruídos de repente,<br>o sorriso cúmplice na fotografia<br>e o cheiro da mulher amada no lençol.<br><p></p>— José Nêumanne Pinto.",
+            "Quando ela fala, parece<br>que a voz da brisa se cala;<br>talvez um anjo emudece<br>quando ela fala.<br><p></p>Meu coração dolorido<br>as suas mágoas exala.<br>E volta ao gozo perdido<br>quando ela fala.<br><p></p>Pudesse eu eternamente,<br>ao lado dela, escutai-a<br>ouvir sua alma inocente<br>quando ela fala.<br><p></p>Minh'alma, já semimorta,<br>conseguira ao céu alçá-la,<br>porque o céu abre uma porta<br>quando ela fala.<br><p></p>— Machado de Assis.",
+            "Beijar-te a fronte linda<br>Beijar-te o aspecto altivo<br>Beijar-te a tez branca<br>Beijar-te o rir lascivo<br>Beijar o ar que aspiras<br>Beijar o pó que pisas<br>Beijar a voz que soltas<br>Beijar a luz que visas<br>Beijar-te por inteira.<br><p></p>— Junqueira Freire.",
+            "na súbita paz<br>da janela aberta<br>em manso aviso<br>penso nela<br>todos os dias.<br><p></p>— Margarida Corção.",
+            "Um sol<br>que se arrebata<br>nas Tordesilhas<br>do desejo<br>volúpia<br>de uma súbita<br>paixão ocidental.<br><p></p>— Marco Lucchesi.",
+            "Duvida da luz dos astros,<br>De que o sol tenha calor,<br>Duvida até da verdade,<br>Mas confia em meu amor.<br><p></p>— William Shakespeare.",
+            "Eu te amo.<br>Ela sorriu, tímida.<br>- Você me ama?<br>- Não.<br>Respondeu ele sorrindo.<br>Todos os que amo vão embora.<br>- Eu não suportaria te ver partir.<br><p></p>— Caio Fernando Abreu.",
+            "Eu amei<br>Eu amei, ai de mim, muito mais<br>Do que devia amar<br>E chorei<br>Ao sentir que iria sofrer<br>E me desesperar<br>Foi então<br>Que da minha infinita tristeza<br>Aconteceu você<br><p></p>Encontrei em você a razão de viver<br>E de amar em paz<br>E não sofrer mais<br>Nunca mais<br>Porque o amor é a coisa mais triste<br>Quando se desfaz.<br><p></p>— Vinicius de Moraes.",
+            "Que a tristeza te convença<br>Que a saudade não compensa<br>E que a ausência não dá paz<br>E o verdadeiro amor de quem se ama<br>Tece a mesma antiga trama<br>Que não se desfaz<br><p></p>E a coisa mais divina<br>Que há no mundo<br>É viver cada segundo<br>Como nunca mais...<br><p></p>— Vinícius de Moraes.",
+            "Quero em teus lábios beber<br>Os teus amores do céu!<br>Quero em teu seio morrer<br>No enlevo do seio teu!<br>Quero viver d'esperança!<br>Quero tremer e sentir!<br>Na tua cheirosa trança<br>Quero sonhar e dormir!<br><p></p>— Álvares de Azevedo.",
+            "Por que, pequeno Girassol,<br>admirando o poente alento<br>sorris a todo momento?<br>E qual amarelo de tua flor,<br>que exala teu sabor<br>tornou-me assim trêmulo?<br><p></p>Oh! e quem sonharia,<br>tê-la ansiosa noite e dia<br>de tocar a tua tez!<br>Qual tua discreta piscadela<br>dizendo tão singela<br>meu amor por ti se fez.<br><p></p>Mandante ao Sol sumir<br>e a noite ser presente,<br>seu olhar, triste e descrente,<br>pôs-se às lágrimas cair!<br><p></p>Um beijo em teu rosto,<br>a partir do vermelho imposto,<br>voltou o Sol a luzir!<br><p></p>— Corbeau.",
+            "A vida é uns deveres que nós trouxemos para fazer em casa.<br>Quando se vê, já são 6 horas: há tempo…<br>Quando se vê, já é 6ª-feira…<br>Quando se vê, passaram 60 anos!<br>Agora, é tarde demais para ser reprovado…<br><p></p>E se me dessem – um dia – uma outra oportunidade,<br>eu nem olhava o relógio<br>seguia sempre em frente…<br>E iria jogando pelo caminho a casca dourada e inútil das horas.<br><p></p>— Mario Quintana.",
+            "não discuto<br>com o destino<br>o que pinta<br>eu assino<br><p></p>— Paulo Leminski.",
+            "É claro que a vida é boa<br>E a alegria, a única indizível emoção<br>É claro que te acho linda<br>Em ti bendigo o amor das coisas simples<br>É claro que te amo<br>E tenho tudo para ser feliz<br><p></p>— Vinicius de Moraes.",
+            "Quantas vezes a gente, em busca da ventura,<br>Procede tal e qual o avozinho infeliz:<br>Em vão, por toda parte, os óculos procura<br>Tendo-os na ponta do nariz!<br><p></p>— Mario Quintana.",
+            "A felicidade aparece para aqueles que choram.<br>Para aqueles que se machucam.<br>Para aqueles que buscam e tentam sempre.<br><p></p>— Clarice Lispector."
+        ]
+
+        //aqui você coloca seus presentes:
+
+        let presentes = [
+            "— Você encontrou uma lâmpada mágica! E tem o direito de fazer um desejo. Peça-me o que você quiser e eu realizarei.",
             "— Você se transformou num gênio da lâmpada mágica! E agora terá de me conceder um desejo.",
             "— Você ganhou uma massagem nos pés!",
             "— Você ganhou um café da manhã na cama.",
-            "— Use sua criatividade e me faça um pedido." ,]
-            if (counter > presentes.length) {
-                document.getElementById("presentes").innerHTML = presentes[parseInt(counter/presentes.length)]
-            } else{
-                document.getElementById("presentes").innerHTML = presentes[counter]
-            }
-            let poemas = ["terraço<br><p></p>aqui te apresento<br>à vista mais bonita da cidade<p></p>os relógios da rua alternam<br>hora e temperatura<br>meus olhos flutuando<br>com a estranha certeza<br>de que você dobra a esquina.<br><p></p>— Alice Sant'Anna.",
-        "Meu coração tem cabelos loiros<br><p></p>Meu coração tem cabelos loiros,<br>pele clara, e só sente em compasso de espera.<br>Meu coração que sente em tudo<br>um leite condensado de águas.<br>Meu coração que te sabe em tudo,<br>no que flutua e no que é musical,<br>na velocidade dos carros, na sensatez das árvores.<br>Condecorado de fardos e fadas,<br>meu coração inventou a malícia dos gatos. Meu coração traça circunferências.<br>Meu coração que te lambe,<br>inútil, aos saltos,<br>ampliado agora de águas e begônias vivas.<br><p></p>— André Di Bernardi.",
-        "Esmeralda<br><p></p>Esmeraldas no heráldico diadema,<br>no lóbulo da orelha cor-de-rosa;<br>o colo — arde na luz maravilhosa<br>de um tríplice colar da mesma gema.<br><p></p>No peito, aberto céu de alvura extrema,<br>entre nuvens de tule vaporosa,<br>verde constelação, na forma airosa<br>de principesca e recortada estema.<br><p></p>Agrilhoa-lhe o pulso um bracelete,<br>glaucas faíscas desprendendo; ao cinto<br>um florão de esmeraldas por colchete;<br><p></p>nos dedos finos igual pedra escalda...<br>Mas deixam todos esse fulgor extinto<br>os seus dois grandes olhos de esmeralda!<br><p></p>— B. Lopes.",
-        "Por que, pálida inocência,<br>Os olhos teus em dormência<br>A medo lanças em mim?<br>No aperto de minha mão<br>Que sonho do coração<br>Tremeu-te os seios assim?<br><p></p>E tuas falas divinas<br>Em que amor lânguida afinas<br>Em que lânguido sonhar?<br>E dormindo sem receio<br>Por que geme no teu seio<br>Ansioso suspirar?<br><p></p>Inocência! quem dissera<br>De tua azul primavera<br>As tuas brisas de amor!<br>Oh! quem teus lábios sentira<br>E que trêmulo te abrira<br>Dos sonhos a tua flor!<br><p></p>Quem te dera a esperança<br>De tua alma de criança,<br>Que perfuma teu dormir!<br>Quem dos sonhos te acordasse,<br>Que num beijo t'embalasse<br>Desmaiada no sentir!<br><p></p>Quem te amasse! e um momento<br>Respirando o teu alento<br>Recendesse os lábios seus!<br>Quem lera, divina e bela,<br>Teu romance de donzela<br>Cheio de amor e de Deus!<br><p></p>— Álvares de Azevedo.",
-        "Teu corpo é roseiral que exala fogo,<br>lambendo e devorando meus desejos.<br>Teus róseos espinhos são mil lampejos<br>que rasgam meus gritos de desafogo.<br><p></p>Teu roseiral, campo de mil prazeres,<br>vermelha fonte de insaciável gozo,<br>arde sobre meu peito. E fogoso<br>canto salmos de orgia, por trazeres<br><p></p>para meus braços, ó lúdica ninfa,<br>a rosa mais rosa, do roseiral<br>secreto que trazias dentro de ti.<br><p></p>— Cleberton Santos.",
-        "Sedento<br>o vento<br>roça brando<br>as águas oferecidas<br>dos verdes mares<br>do mundo.<br>Meus lábios,<br>sem menos sede<br>bebem<br>as águas profundas<br>desses seus lábios<br>sem muros.<br><p></p>— Domício Proença Filho.",
-        "Maribondos estalando pelo corpo<br>mínimos guardiões desse desejo<br>de furtar seus frutos<br>e desabotoar essas paredes<br>calhas, luzes, rochedos<br>que dividem e separam<br>minhas chamas das tuas<br><p></p>— Iracema Macedo.",
-        "O coração que bate neste peito,<br>E que bate por ti unicamente,<br>O coração, outrora independente,<br>Hoje humilde, cativo e satisfeito;<br><p></p>Quando eu cair, enfim, morto e desfeito,<br>Quando a hora soar lugubremente<br>Do repouso final, — tranquilo e crente<br>Irá sonhar no derradeiro leito.<br><p></p>E quando um dia fores comovida<br>— Branca visão que entre os sepulcros erra —<br>Visitar minha fúnebre guarida,<br><p></p>O coração, que toda em si te encerra,<br>Sentindo-te chegar, mulher querida,<br>Palpitará de amor dentro da terra.<br><p></p>— Guimarães Junior.",
-        "Um relâmpago rasga a noite<br>qual navalha afiada na pedra,<br>a batucada da chuva no asfalto,<br>ao som de motores que roncam<br>e de pneus patinando em poças.<br>A vida não é muito mais do que isto:<br>uma treva úmida e renitente<br>com brilhos e ruídos de repente,<br>o sorriso cúmplice na fotografia<br>e o cheiro da mulher amada no lençol.<br><p></p>— José Nêumanne Pinto.",
-        "Quando ela fala, parece<br>que a voz da brisa se cala;<br>talvez um anjo emudece<br>quando ela fala.<br><p></p>Meu coração dolorido<br>as suas mágoas exala.<br>E volta ao gozo perdido<br>quando ela fala.<br><p></p>Pudesse eu eternamente,<br>ao lado dela, escutai-a<br>ouvir sua alma inocente<br>quando ela fala.<br><p></p>Minh'alma, já semimorta,<br>conseguira ao céu alçá-la,<br>porque o céu abre uma porta<br>quando ela fala.<br><p></p>— Machado de Assis.",
-        "Beijar-te a fronte linda<br>Beijar-te o aspecto altivo<br>Beijar-te a tez branca<br>Beijar-te o rir lascivo<br>Beijar o ar que aspiras<br>Beijar o pó que pisas<br>Beijar a voz que soltas<br>Beijar a luz que visas<br>Beijar-te por inteira.<br><p></p>— Junqueira Freire.",
-        "na súbita paz<br>da janela aberta<br>em manso aviso<br>penso nela<br>todos os dias.<br><p></p>— Margarida Corção.",
-        "Um sol<br>que se arrebata<br>nas Tordesilhas<br>do desejo<br>volúpia<br>de uma súbita<br>paixão ocidental.<br><p></p>— Marco Lucchesi.",
-        "Duvida da luz dos astros,<br>De que o sol tenha calor,<br>Duvida até da verdade,<br>Mas confia em meu amor.<br><p></p>— William Shakespeare.",
-        "Eu te amo.<br>Ela sorriu, tímida.<br>- Você me ama?<br>- Não.<br>Respondeu ele sorrindo.<br>Todos os que amo vão embora.<br>- Eu não suportaria te ver partir.<br><p></p>— Caio Fernando Abreu.",
-        "Eu amei<br>Eu amei, ai de mim, muito mais<br>Do que devia amar<br>E chorei<br>Ao sentir que iria sofrer<br>E me desesperar<br>Foi então<br>Que da minha infinita tristeza<br>Aconteceu você<br><p></p>Encontrei em você a razão de viver<br>E de amar em paz<br>E não sofrer mais<br>Nunca mais<br>Porque o amor é a coisa mais triste<br>Quando se desfaz.<br><p></p>— Vinicius de Moraes.",
-        "Que a tristeza te convença<br>Que a saudade não compensa<br>E que a ausência não dá paz<br>E o verdadeiro amor de quem se ama<br>Tece a mesma antiga trama<br>Que não se desfaz<br><p></p>E a coisa mais divina<br>Que há no mundo<br>É viver cada segundo<br>Como nunca mais...<br><p></p>— Vinícius de Moraes.",
-        "Quero em teus lábios beber<br>Os teus amores do céu!<br>Quero em teu seio morrer<br>No enlevo do seio teu!<br>Quero viver d'esperança!<br>Quero tremer e sentir!<br>Na tua cheirosa trança<br>Quero sonhar e dormir!<br><p></p>— Álvares de Azevedo.",
-        "Por que, pequeno Girassol,<br>admirando o poente alento<br>sorris a todo momento?<br>E qual amarelo de tua flor,<br>que exala teu sabor<br>tornou-me assim trêmulo?<br><p></p>Oh! e quem sonharia,<br>tê-la ansiosa noite e dia<br>de tocar a tua tez!<br>Qual tua discreta piscadela<br>dizendo tão singela<br>meu amor por ti se fez.<br><p></p>Mandante ao Sol sumir<br>e a noite ser presente,<br>seu olhar, triste e descrente,<br>pôs-se às lágrimas cair!<br><p></p>Um beijo em teu rosto,<br>a partir do vermelho imposto,<br>voltou o Sol a luzir!<br><p></p>— Corbeau.",
-        "A vida é uns deveres que nós trouxemos para fazer em casa.<br>Quando se vê, já são 6 horas: há tempo…<br>Quando se vê, já é 6ª-feira…<br>Quando se vê, passaram 60 anos!<br>Agora, é tarde demais para ser reprovado…<br><p></p>E se me dessem – um dia – uma outra oportunidade,<br>eu nem olhava o relógio<br>seguia sempre em frente…<br>E iria jogando pelo caminho a casca dourada e inútil das horas.<br><p></p>— Mario Quintana.",
-        "não discuto<br>com o destino<br>o que pinta<br>eu assino<br><p></p>— Paulo Leminski.",
-        "É claro que a vida é boa<br>E a alegria, a única indizível emoção<br>É claro que te acho linda<br>Em ti bendigo o amor das coisas simples<br>É claro que te amo<br>E tenho tudo para ser feliz<br><p></p>— Vinicius de Moraes.",
-        "Quantas vezes a gente, em busca da ventura,<br>Procede tal e qual o avozinho infeliz:<br>Em vão, por toda parte, os óculos procura<br>Tendo-os na ponta do nariz!<br><p></p>— Mario Quintana.",
-        "A felicidade aparece para aqueles que choram.<br>Para aqueles que se machucam.<br>Para aqueles que buscam e tentam sempre.<br><p></p>— Clarice Lispector."]
-            if (counter > poemas.length) {
-                document.getElementById("poemas").innerHTML = `<b>Agora um poema:</b><br><br>`+poemas[parseInt(counter/poemas.length)]
-            } else{
-                document.getElementById("poemas").innerHTML = `<b>Agora um poema:</b><br><br>`+poemas[counter]
-            }
-            let musicas = ["— Ouça-me: Break My Heart Again, FINNEAS.",
+            "— Use sua criatividade e me faça um pedido." ,
+        ]
+
+        //aqui você coloca suas músicas:
+
+        let musicas = [
+            "— Ouça-me: Break My Heart Again, FINNEAS.",
             "— Ouça-me: Always On My Mind, Elvis Presley.",
             "— Ouça-me: I Don't Wanna Be Okay Without You, Charlie Burg.",
             "— Ouça-me: IDK You Yet, Alexander 23.",
@@ -357,13 +342,60 @@
             "— Ouça-me: Leave The Door Open, Bruno Mars.",
             "— Ouça-me: Levitating, Dua Lipa, DaBaby.",
             "— Ouça-me: We're Good, Dua Lipa.",
-            ]
-            if (counter > presentes.length) {
-                document.getElementById("musicas").innerHTML = "E para finalizar, uma música:<b><br><br>"+musicas[parseInt(counter/musicas.length)]
-            } else{
-                document.getElementById("musicas").innerHTML = "E para finalizar, uma música:<b><br><br>"+musicas[counter]
+        ]
+    </script>
+
+
+    <script lang="javascript">
+        //início do script
+            //aqui ele vai randomizar os gifs a cada atualização.
+            document.getElementById("gif").setAttribute("src", `imagens/gifs/${Math.floor(Math.random()*21)}.gif`)
+            //código que pega a data de hoje.
+            let data = new Date()
+            //formatando a data.
+            let data_formatada = `${data.getDate()}/${data.getMonth()+1}/${data.getFullYear()}`
+            //aqui ele vai colocar a data de hoje na frase.
+            document.getElementById("frasedadata").innerHTML=`Oie, amor! Bem-vinda ao dia (${data_formatada}) e aqui está uma mensagem de bom dia para você:`
+            //aqui to salvando o dia da postagem, dia 14/05/2021.
+            let diaum = new Date(Date.parse('May 13, 2021'))
+            //fazendo a contagem de dias.
+            let counter = parseInt(parseInt(data.getTime() - diaum.getTime())/(1000 * 60 * 60 * 24))
+            //colocando o counter na página.
+            document.getElementById("aquiocontador").innerHTML=`Este é o <b class="day"><u>${counter}<sup>o</sup></u></b> dia de 365!`
+            //randomizando as frases.
+            if (counter <= todasasfrases.length){
+                document.getElementById("frasedodiaaqui").innerHTML = todasasfrases[counter]
             }
-        }
+            if (counter <= presentes.length){
+                document.getElementById("presentes").innerHTML = presentes[counter]
+            }
+            if (counter <= poemas.length){
+                document.getElementById("poemas").innerHTML = poemas[counter]
+            }
+            if (counter <= musicas.length){
+                document.getElementById("musicas").innerHTML = musicas[counter]
+            }
+            if (counter > todasasfrases.length){
+                document.getElementById("frasedodiaaqui").innerHTML = todasasfrases[ajustar(counter, todasasfrases.length)]
+            }
+            if (counter > presentes.length){
+                document.getElementById("presentes").innerHTML = presentes[ajustar(counter, presentes.length)]
+            }
+            if (counter > poemas.length){
+                document.getElementById("poemas").innerHTML = poemas[ajustar(counter, poemas.length)]
+            }
+            if (counter > musicas.length){
+                document.getElementById("musicas").innerHTML = musicas[ajustar(counter, musicas.length)]
+            }
+            function ajustar(x, y){
+                if (x>y){
+                    x=Math.floor(x/y)
+                    if (x>y){
+                        return ajustar(x, y)
+                    }
+                    return x
+                }
+            }
     </script>
 </body>
 </html>
