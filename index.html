@@ -371,10 +371,10 @@
                 document.getElementById("presentes").innerHTML = presentes[counter]
             }
             if (counter <= poemas.length){
-                document.getElementById("poemas").innerHTML = poemas[counter]
+                document.getElementById("poemas").innerHTML = `<b>Agora um poema:</b><br><br>`+poemas[counter]
             }
             if (counter <= musicas.length){
-                document.getElementById("musicas").innerHTML = musicas[counter]
+                document.getElementById("musicas").innerHTML = "E para finalizar, uma música:<b><br><br>"+musicas[counter]
             }
             if (counter > todasasfrases.length){
                 document.getElementById("frasedodiaaqui").innerHTML = todasasfrases[ajustar(counter, todasasfrases.length)]
@@ -383,10 +383,10 @@
                 document.getElementById("presentes").innerHTML = presentes[ajustar(counter, presentes.length)]
             }
             if (counter > poemas.length){
-                document.getElementById("poemas").innerHTML = poemas[ajustar(counter, poemas.length)]
+                document.getElementById("poemas").innerHTML = `<b>Agora um poema:</b><br><br>`+poemas[ajustar(counter, poemas.length)]
             }
             if (counter > musicas.length){
-                document.getElementById("musicas").innerHTML = musicas[ajustar(counter, musicas.length)]
+                document.getElementById("musicas").innerHTML = "E para finalizar, uma música:<b><br><br>"+musicas[ajustar(counter, musicas.length)]
             }
             function ajustar(x, y){
                 if (x>y){
