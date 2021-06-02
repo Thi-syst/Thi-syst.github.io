@@ -29,11 +29,11 @@
     h1 {
         font-family: "Mansalva"; 
         font-size: 1.6em; 
-        text-shadow: rgba(255, 0, 85, 0.815) 3px 2px;
+        text-shadow: white 3px 2px;
     }
     h2 {
         font-family: "Mansalva"; 
-        text-shadow: rgba(255, 0, 85, 0.815) 4px 3px;
+        text-shadow: white 4px 3px;
     }
     .sep { 
         width: 65%; 
@@ -61,7 +61,7 @@
         border-radius: 50%;
     }
     .day {
-        color: rgb(255, 0, 85); 
+        color: white; 
         text-shadow: none;
     }
     .msg {
@@ -346,6 +346,20 @@
             let data_formatada = `${data.getDate()}/${data.getMonth()+1}/${data.getFullYear()}`
             //aqui ele vai colocar a data de hoje na frase.
             document.getElementById("frasedadata").innerHTML=`Oie, amor! Bem-vinda ao dia (${data_formatada}) e aqui está uma mensagem de bom dia para você:`
+            //aqui vai receber bom dia, boa tarde e boa noite.
+            let hour = data.getHours()
+            let good = document.querySelector('#gud')
+            if (hour >= 6 && hour < 12) {
+                good.innerHTML = 'Bom dia,'
+            } else if (hour >= 12 && hour <= 18) {
+                good.innerHTML = 'Boa tarde,'
+            } else if (hour > 18 && hour <= 23) {
+                good.innerHTML = 'Boa noite,'
+            } else if (hour >= 0 && hour <= 5) {
+                good.innerHTML = 'Boa madrugada,'
+            } else {
+                good.innerHTML = 'Hora indefinida'
+            }
             //aqui to salvando o dia da postagem, dia 14/05/2021.
             let diaum = new Date(Date.parse('May 13, 2021'))
             //fazendo a contagem de dias.
